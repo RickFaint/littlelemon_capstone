@@ -4,19 +4,10 @@ Definition of views.
 
 from datetime import datetime
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 
-def home(request):
-    """Renders the home page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/index.html',
-        {
-            'title':'Home Page',
-            'year':datetime.now().year,
-        }
-    )
+def index(request):
+    return render(request, 'index.html', {})
 
 def contact(request):
     """Renders the contact page."""
@@ -43,3 +34,5 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+def helloword(request):
+    return HttpResponse("Hello World")    

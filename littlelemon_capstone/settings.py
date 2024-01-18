@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
-    'reservations',
+    'restaurant',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'littlelemon_capstone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,11 +75,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'littlelemon_capstone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'littlelemoncapstone',  
+        'USER': 'root',  
+        'PASSWORD': 'new_password',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }  
+    }  
 }
 
 # Password validation

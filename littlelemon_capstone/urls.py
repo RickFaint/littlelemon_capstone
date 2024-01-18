@@ -3,14 +3,14 @@ Definition of urls for littlelemon_capstone.
 """
 
 from datetime import datetime
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
-from reservations import forms, views
+from restaurant import forms, views
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+   
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     path('login/',
@@ -27,4 +27,6 @@ urlpatterns = [
          name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
+    path('restaurant/', include('restaurant.urls')),
+    
 ]
