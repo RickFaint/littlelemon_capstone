@@ -120,6 +120,7 @@
     <Content Include="restaurant\templates\app\layout.html" />
     <Content Include="restaurant\templates\app\login.html" />
     <Content Include="restaurant\templates\app\loginpartial.html" />
+    <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">
